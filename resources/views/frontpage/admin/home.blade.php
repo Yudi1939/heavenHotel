@@ -59,6 +59,7 @@
                                 </th>
                                 <th class="p-3">Cabang Hotel</th>
                                 <th class="p-3">Harga Sewa</th>
+                                <th class="p-3">Bintang</th>
                                 <th class="p-3">Deskripsi</th>
                                 <th class="p-3 text-center">Action</th>
                             </tr>
@@ -71,6 +72,11 @@
                                     </td>
                                     <td class="p-3">{{ $item->cabang_hotel }}</td>
                                     <td class="p-3">{{ 'Rp '.number_format($item->price) }}</td>
+                                    <td>
+                                        <?php for ($star = 1; $star <= $item->bintang; $star++) { ?>
+                                            <i class="bi bi-star-fill text-yellow-500"></i>
+                                        <?php } ?>
+                                    </td>
                                     <td class="p-3">{{ $item->desc_hotel }}</td>
                                     <td class="p-3 text-center">
                                         <div class="flex justify-center gap-2">
